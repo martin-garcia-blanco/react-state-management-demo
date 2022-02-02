@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# How to deal with state on React applications
+Facilitated by [Martín García Blanco](https://github.com/martin-garcia-blanco) and [Codurance](https://www.codurance.com/) ![]()
+<img src="https://pbs.twimg.com/profile_images/1459131184873619480/P3VvXdWN_400x400.png" alt="drawing"  height="50"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a demo to explain how to handle the state in a react application
+- useEffect
+- useState
+- Redux
+</br>
+</br>
+</br>
+</br>
+</br>
 
-## Available Scripts
+## What is a Hook?
+- A Hook is a special function that lets you “hook into” React features. For example, useState is a Hook that lets you add React state to function components
+</br>
+</br>
+</br>
+</br>
 
-In the project directory, you can run:
+## useState
+```
+const [banana, setBanana] = useState(🍌)
+console.log('this is a 'banana) // this is a 🍌
+setBanana(🐒)
+console.log('this is a 'banana) // this is a 🐒
+```
+</br>
+</br>
+</br>
+</br>
 
-### `npm start`
+## useEffect
+- **What does useEffect do?** By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Why is useEffect called inside a component?** it’s already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Does useEffect run after every render?** Yes! By default 🤦🏻‍♂️, it runs both after the first render and after every update. (We will later talk about how to customize this.)
+```
+useEffect(()=>{
+  Code to do on each render
 
-### `npm test`
+  return ()=>{
+    code to do on destroy the component
+  }
+}, [some magic for later])
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</br>
+</br>
+</br>
+</br>
 
-### `npm run build`
+# Redux
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. You can use Redux together with React, or with any other view library.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ <img alt="Redux Flow" src="https://redux.js.org/assets/images/one-way-data-flow-04fe46332c1ccb3497ecb04b94e55b97.png" height="250px">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Actions**: 
+  - An action is a plain JavaScript object that has a type field. You can think of an action as an event that describes something that happened in the application.
+  - Can have other fields with additional information about what happened. By convention, we put that information in a field called payload.
+- **Reducers**
+  - A reducer is a function that receives the current state and an action object, decides how to update the state if necessary, and returns the new state: (state, action) => newState. You can think of a reducer as an event listener which handles events based on the received action (event) type.
+- **Store**
+  - The current Redux application state lives in an object called the store .
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
