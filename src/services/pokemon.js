@@ -14,7 +14,14 @@ async  function getPokemonByUrl (pokemonUrl) {
   return sanitizePokemonData(pokemon)
 }
 
-function sanitizePokemonData(pokemon) {
-  return {...pokemon, image: pokemon.sprites.front_default}
+function sanitizePokemonData (pokemon) {
+  return {...pokemon, image: pokemon.sprites.front_default, isFavourite: false}
+}
+
+export function toggleFavourite (pokemons, pokemonName) {
+  return pokemons.map(pokemon => {
+    if(pokemon.name !== pokemonName){ return pokemon }
+    return {...pokemon, isFavourite: !pokemon.isFavourite}
+  })
 }
 
