@@ -52,9 +52,22 @@ useEffect(()=>{
 </br>
 </br>
 
+# State Lifting
+ <img alt="state lifting" src="./material/stateLifting.png" height="350px">
+
+ </br>
+</br>
+</br>
+</br>
+
 # Redux
 
 - Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. You can use Redux together with React, or with any other view library.
+
+ <img alt="redux pattern" src="./material/reduxPattern.png" height="350px">
+
+ </br>
+</br>
 
  <img alt="Redux Flow" src="https://redux.js.org/assets/images/one-way-data-flow-04fe46332c1ccb3497ecb04b94e55b97.png" height="250px">
 
@@ -64,5 +77,5 @@ useEffect(()=>{
 - **Reducers**
   - A reducer is a function that receives the current state and an action object, decides how to update the state if necessary, and returns the new state: (state, action) => newState. You can think of a reducer as an event listener which handles events based on the received action (event) type.
 - **Store**
-  - The current Redux application state lives in an object called the store .
+  - The current Redux application state lives in an object called the store.
 
