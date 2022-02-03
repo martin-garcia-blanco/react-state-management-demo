@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AppHooks from './AppHooks';
+import AppRedux from './AppRedux';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
+import pokemonStore from './store/reducers'
+import { Provider } from 'react-redux'
+
+
+const myStore = createStore(pokemonStore, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={myStore}>
+      {/* <AppHooks /> */}
+      <AppRedux />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
