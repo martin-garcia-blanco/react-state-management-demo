@@ -11,7 +11,7 @@ function App() {
     getPokemons()
     .then(setPokemons)
   }, [])
-
+  
   const togggleFavouritePokemon = (pokemonName) => {
     setPokemons(toggleFavourite(pokemons, pokemonName))
   }
