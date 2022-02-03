@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import PokemonCard from './components/PokemonCard/PokemonCard';
-import { fetchPokemons } from './store/actions';
+import { fetchPokemons, toggleFavouritePokemon } from './store/actions';
 
 
 function App() {
@@ -13,7 +13,8 @@ function App() {
     dispatch(fetchPokemons())
   }, [dispatch])
 
-  const togggleFavouritePokemon = () => {
+  const togggleFavouritePokemon = (pokemonName) => {
+    dispatch(toggleFavouritePokemon(pokemonName))
   }
   
   return (
