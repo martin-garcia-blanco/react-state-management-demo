@@ -79,3 +79,6 @@ useEffect(()=>{
 - **Store**
   - The current Redux application state lives in an object called the store.
 
+
+# Async requests with redux-thunk
+<img alt="diagram" src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif">
