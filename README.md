@@ -6,8 +6,17 @@ This is a demo to explain how to handle the state in a react application
 - useEffect
 - useState
 - Redux
+
 </br>
 </br>
+</br>
+</br>
+
+## React lifeCycle
+- **Mounting**: this is the stage where the component is constructed with the given Props and default state.
+- **Updating**: is the stage when the state of a component is updated and the application is repainted.
+- **Unmounting**: where the component is removed from the page.
+
 </br>
 </br>
 </br>
@@ -52,7 +61,7 @@ useEffect(()=>{
 </br>
 </br>
 
-# State Lifting
+# State/Props Lifting
  <img alt="state lifting" src="./material/stateLifting.png" height="350px">
 
  </br>
